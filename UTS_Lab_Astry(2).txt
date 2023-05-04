@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+void bintang_atas(int batas,int i){
+    for (int j = i; j < batas; j++){
+            cout << "* ";
+        }
+}
+
+void bintang_bawah(int batas, int i){
+    for (int j = i; j < batas + 1; j++){
+            cout << "* ";
+        }
+}
+
+int main(){
+    system("CLS");
+    int batas;
+
+    cout << "Input batas  : "; cin >> batas;
+
+    for (int i = 0; i < batas; i++){
+        bintang_atas(batas,i);
+        for (int k = 0; k < i; k++){
+            cout << "    ";
+        }
+        bintang_atas(batas,i);
+        cout << endl;
+    }
+
+    for (int i = batas - 1; i > 0; i--){
+        bintang_bawah(batas,i);
+        for (int k = 1; k < i; k++){
+            cout << "    ";
+        }
+        bintang_bawah(batas,i);
+        cout << endl;
+    }
+}
